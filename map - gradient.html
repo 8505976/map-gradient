@@ -316,11 +316,11 @@
       options: { position: 'topright' },
       onAdd: function () {
         const div = L.DomUtil.create('div', 'leaflet-control-legend');
-        const labelText = maxMCNCount > 1 ? `Constituency with 1 → ${maxMCNCount} MCNs` : 'MCNs'; // ✅ Dynamic
+        const labelText = maxMCNCount > 1 ? `Constituencies with 1 → ${maxMCNCount} MCNs` : 'MCNs'; // ✅ Dynamic
         div.innerHTML = `
           <div class="legend-item">
             <span class="legend-swatch" style="background:${baseColors[0]}"></span>
-            <span>Constituency with 0 MCNs</span>
+            <span>Constituencies with 0 MCNs</span>
           </div>
           <div class="legend-item">
             <span style="
@@ -335,7 +335,7 @@
           </div>
           <div class="legend-item">
             <span class="legend-swatch" style="background:#C97064"></span>
-            <span>MCN</span>
+            <span>MCNs</span>
           </div>`;
         return div;
       }
