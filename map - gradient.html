@@ -130,7 +130,7 @@
 
     function getColorFromCount(count, maxCount = 20) {
       const scale = Math.min(count / maxCount, 1);
-      const start = [170, 180, 190];
+      const start = [179, 188, 217];
       const end = [64, 97, 126];
       const r = Math.round(start[0] + (end[0] - start[0]) * scale);
       const g = Math.round(start[1] + (end[1] - start[1]) * scale);
@@ -327,7 +327,7 @@
               display: inline-block;
               width: 18px;
               height: 18px;
-              background: linear-gradient(to right, rgb(170, 180, 190), rgb(164, 97, 126));
+              background: linear-gradient(to right, rgb(179, 188, 217), rgb(164, 97, 126));
               border: 1px solid #999;
               margin-right: 8px;
 	      box-sizing: border-box;
