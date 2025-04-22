@@ -260,7 +260,7 @@
       const hasMCN = f.properties.has_mcn === 1;
       const fillColor = hasMCN ? getColorFromCount(mcnCounts[code] || 0, maxMCNCount) : baseColors[0];
 
-      layer.defaultStyle = { color: 'black', weight: 1, fillOpacity: 1, fillColor };
+      layer.defaultStyle = { color: 'white', weight: 1, fillOpacity: 1, fillColor };
       layer.setStyle(layer.defaultStyle);
 
       let tooltip;
@@ -288,7 +288,7 @@
 
     function attachMCNHandlers(f, layer) {
       layer.defaultStyle = {
-        color: 'black', weight: 1.5,
+        color: 'white', weight: 1.5,
         fillColor: '#009a9e', fillOpacity: 1
       };
       layer.setStyle(layer.defaultStyle);
@@ -364,8 +364,8 @@
       }).addTo(map);
       map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
 
-      highlightLayer = L.geoJSON(null, { style: f => ({ color: 'white', weight:2, fillOpacity: 1, fillColor: highlightColors[f.properties.has_mcn] }) }).addTo(map);
-      lsoaHighlightLayer = L.geoJSON(null, { style: { color: 'white', weight: 2, fillColor: '#00C5CC', fillOpacity: 1 } }).addTo(map);
+      highlightLayer = L.geoJSON(null, { style: f => ({ color: 'black', weight:2, fillOpacity: 1, fillColor: highlightColors[f.properties.has_mcn] }) }).addTo(map);
+      lsoaHighlightLayer = L.geoJSON(null, { style: { color: 'black', weight: 2, fillColor: '#00C5CC', fillOpacity: 1 } }).addTo(map);
       mcnLayer = L.geoJSON(null, { onEachFeature: attachMCNHandlers }).addTo(map);
       pcLayer = L.geoJSON(null, { onEachFeature: attachPCHandlers }).addTo(map);
 
