@@ -120,7 +120,7 @@
     let maxMCNCount = 0; // ✅ Added for dynamic legend
     const metadataDiv = document.getElementById('metadata');
     const baseColors = { 1: '#103a5e', 0: '#DADDD8' };
-    const highlightColors = { 1: '#009a9e', 0: '#EAECE9' };
+    const highlightColors = { 1: '#103a5e', 0: '#EAECE9' };
     const isTouchDevice = window.matchMedia('(hover: none)').matches;
 
     function formatScore(v) {
@@ -289,7 +289,7 @@
     function attachMCNHandlers(f, layer) {
       layer.defaultStyle = {
         color: 'white', weight: 1.5,
-        fillColor: '#C97064', fillOpacity: 1
+        fillColor: '#009a9e', fillOpacity: 1
       };
       layer.setStyle(layer.defaultStyle);
 
@@ -300,7 +300,7 @@
 
         layer.on('mouseover', e => {
           tooltip.setLatLng(e.latlng).addTo(map);
-          layer.setStyle({ ...layer.defaultStyle, fillColor: '#DA9D95' });
+          layer.setStyle({ ...layer.defaultStyle, fillColor: '#00C5CC' });
         });
         layer.on('mousemove', e => tooltip.setLatLng(e.latlng));
         layer.on('mouseout', () => {
@@ -335,7 +335,7 @@
             <span>${labelText}</span>
           </div>
           <div class="legend-item">
-            <span class="legend-swatch" style="background:#C97064"></span>
+            <span class="legend-swatch" style="background:#009a9e"></span>
             <span>MCNs</span>
           </div>`;
         return div;
@@ -365,7 +365,7 @@
       map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
 
       highlightLayer = L.geoJSON(null, { style: f => ({ color: 'black', weight:2, fillOpacity: 1, fillColor: highlightColors[f.properties.has_mcn] }) }).addTo(map);
-      lsoaHighlightLayer = L.geoJSON(null, { style: { color: 'black', weight: 2, fillColor: '#DA9D95', fillOpacity: 1 } }).addTo(map);
+      lsoaHighlightLayer = L.geoJSON(null, { style: { color: 'black', weight: 2, fillColor: '#00C5CC', fillOpacity: 1 } }).addTo(map);
       mcnLayer = L.geoJSON(null, { onEachFeature: attachMCNHandlers }).addTo(map);
       pcLayer = L.geoJSON(null, { onEachFeature: attachPCHandlers }).addTo(map);
 
